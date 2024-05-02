@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "landing#index"
+  get "salida" => "landing#salida"
 end
