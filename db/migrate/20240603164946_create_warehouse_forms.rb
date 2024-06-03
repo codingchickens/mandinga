@@ -8,7 +8,7 @@ class CreateWarehouseForms < ActiveRecord::Migration[7.1]
       t.integer :amount
       t.date :date
       t.text :notes
-
+      atr
       t.timestamps
     end
   end
