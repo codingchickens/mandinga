@@ -10,5 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 0) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_03_164946) do
+  create_table "warehouse_forms", force: :cascade do |t|
+    t.boolean "is_entry"
+    t.integer "product"
+    t.integer "element"
+    t.integer "reason"
+    t.integer "amount"
+    t.date "date"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end

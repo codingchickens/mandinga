@@ -1,0 +1,2 @@
+class WarehouseForm < ApplicationRecord
+end
