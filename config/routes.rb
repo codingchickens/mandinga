@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   root "warehouse_form#form_entry"
   get "salida" => "landing#salida"
   #get "form_entry" => "warehouse_form#form_entry"
+  get "form_out" => "warehouse_form#form_out"
 end

@@ -1,18 +1,10 @@
-<%= temp_string = ''%>
-<%= form_with temp_string, model: @warehouse_form_entry  do |form| %>
-  <h1><%= @warehouse_form_entry.chocolate? %></h1>
-  <%= form.text_field :title %>
-  <%= form.text_area :body, size: "60x10" %>
-  <%= form.submit %>
-<% end %>
-
 <div class="container-fluid">
   <div class="row philosopher-bold">
-    <div class="d-flex justify-content-center mt-4 mb-4">
-      <img src="/assets/logo.png" alt="">
+    <div class="mt-4 mb-4 d-flex justify-content-center">
+      <img src="/assets/logo.png " alt="">
     </div>
-    <div class="p-3 mb-2 ps-sm-5 bg-black text-white">
-      <h1 class="display-4">Ingreso nuevo producto</h1>
+    <div class="p-3 ps-sm-5 mb-2 bg-black text-white">
+      <h1 class="display-4">Salida de productos</h1>
     </div>
     <div class="container">
       <form class="m-sm-5 p-sm-5 p-3 border fs-5">
@@ -80,13 +72,12 @@
         </div>
         <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
           <div class="col-sm-2">
-            <label for="ingreso" class="form-label">Motivo del Ingreso</label>
+            <label for="ingreso" class="form-label">Motivo del egreso</label>
           </div>
           <div class="col-sm-10">
-            <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" id="ingreso">
-              <option value="1">Producción</option>
-              <option value="2">Devolución en eventos por clientes</option>
-              <option value="3">Devolución en evento por sobreestimación de stock</option>
+            <select class="form-select form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" id="ingreso">
+              <option value="1">Ventas</option>
+              <option value="2">Merma</option>
             </select>
           </div>
         </div>
@@ -95,7 +86,7 @@
             <label for="cantidad" class="form-label">Cantidad</label>
           </div>
           <div class="col-sm-10">
-            <input type="number" id="cantidad" class="form-control pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5">
+            <input type="number" id="cantidad" class="form-control form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5">
           </div>
         </div>
         <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
@@ -103,7 +94,7 @@
             <label for="fecha" class="form-label">Fecha</label>
           </div>
           <div class="col-sm-10">
-            <input type="date" id="fecha" class="form-control pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5">
+            <input type="date" id="fecha" class="form-control form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5">
           </div>
         </div>
         <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
@@ -111,11 +102,11 @@
             <label for="observaciones" class="form-label">Observaciones</label>
           </div>
           <div class="col-sm-10">
-            <textarea class="form-control pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
         </div>
         <div class="col-12 mt-3 mb-3 d-flex justify-content-center">
-          <button type="submit" class="btn btn-outline-light btn-lg rounded-pill mandinga-color">Ingresar</button>
+          <button type="submit" class="btn btn-outline-light btn-lg rounded-pill mandinga-color">Registrar</button>
         </div>
       </form>
     </div>
