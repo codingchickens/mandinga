@@ -1,10 +1,10 @@
-<%= temp_string = ''%>
-<%= form_with temp_string, model: @warehouse_form_entry  do |form| %>
-  <h1><%= @warehouse_form_entry.chocolate? %></h1>
+<!--
+<%= form_with(url: '/get_form', method: :post) do |form| %>
   <%= form.text_field :title %>
   <%= form.text_area :body, size: "60x10" %>
   <%= form.submit %>
 <% end %>
+-->
 
 <div class="container-fluid">
   <div class="row philosopher-bold">

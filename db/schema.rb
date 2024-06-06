@@ -13,9 +13,9 @@
 ActiveRecord::Schema[7.1].define(version: 2024_06_03_164946) do
   create_table "warehouse_forms", force: :cascade do |t|
     t.boolean "is_entry"
-    t.integer "product" #ok
-    t.integer "element" #ok
-    t.integer "reason" #ok
+    t.integer "product"
+    t.integer "element"
+    t.integer "reason"
     t.integer "amount"
     t.date "date"
     t.text "notes"
