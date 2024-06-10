@@ -5,10 +5,17 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   #root "landing#index"
   root "warehouse_form#form_entry"
-  get "salida" => "landing#salida"
+  get "warehouse_form" => "warehouse_form#form_out"
+  #get "save_form" => "warehouse_form#save_form"
 
+<<<<<<< HEAD
   post "/get_form" => "warehouse_form#get_form"
   get "formularios" => "warehouse_form#index"
   #get "form_entry" => "warehouse_form#form_entry"
   get "form_out" => "warehouse_form#form_out"
+=======
+  post '/save_form', to: 'warehouse_form#save_form'
+
+  #get "salida" => "landing#salida"
+>>>>>>> 899f4e0 (chore(WarehouseForm): we add form with to the form)
 end

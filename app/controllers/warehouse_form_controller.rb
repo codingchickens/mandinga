@@ -8,9 +8,7 @@ class WarehouseFormController < ApplicationController
     @warehouse_form_out = WarehouseForm.new(is_entry: false)
   end
 
-  def get_form
+  def save_form
     binding.pry
-    @title = params[:title]
-    @body = params[:body]
   end
 end
