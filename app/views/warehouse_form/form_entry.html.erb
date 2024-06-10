@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-<!--
-<%= form_with(url: '/get_form', method: :post) do |form| %>
-  <%= form.text_field :title %>
-  <%= form.text_area :body, size: "60x10" %>
-  <%= form.submit %>
-<% end %>
--->
-
 <div class="container-fluid">
   <div class="row philosopher-bold">
     <div class="d-flex justify-content-center mt-4 mb-4">
@@ -16,25 +7,11 @@
       <h1 class="display-4">Ingreso de Productos</h1>
     </div>
     <div class="container">
-      <form class="m-sm-5 p-sm-5 p-3 border fs-5">
+      <%= form_with url: "/save_form", method: :post, class: "m-sm-5 p-sm-5 p-3 border fs-5" do |_| %>
         <div class="row mt-3 mb-3 d-flex align-items-center">
           <div class="col-sm-2">
             <label for="elemento" class="form-label">Elemento</label>
-=======
-<%= form_with url: "/save_form", method: :post do |_| %>
-  <div class="container-fluid">
-    <div class="row philosopher-bold">
-      <div class="d-flex justify-content-center mt-4 mb-4">
-        <img src="/assets/logo.png" alt="">
-      </div>
-      <div class="p-3 mb-2 ps-sm-5 bg-black text-white">
-        <h1 class="display-4">Ingreso nuevo producto</h1>
-      </div>
-      <div class="container">
-        <form class="m-sm-5 p-sm-5 p-3 border fs-5">
-          <div class="row mt-3 mb-3 d-flex align-items-center">
-            <div class="col-sm-2">
-              <label for="elemento" class="form-label">Elemento</label>
+
             </div>
             <div class="col-sm-10">
               <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" name="elemento" id="elemento">
@@ -48,66 +25,11 @@
                 </optgroup>
               </select>
             </div>
->>>>>>> 899f4e0 (chore(WarehouseForm): we add form with to the form)
           </div>
           <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
             <div class="col-sm-2">
               <label for="tipo-de-producto" class="form-label">Tipo de producto</label>
             </div>
-            <div class="col-sm-10">
-              <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" name="tipo-de-producto" id="tipo-de-producto">
-                <optgroup label="Cócteles Dulces">
-                  <option value="maracuya">Maracuyá</option>
-                  <option value="durazno">Durazno</option>
-                  <option value="frambuesa">Frambuesa</option>
-                  <option value="mango">Mango</option>
-                  <option value="flor-de-jamaica">Flor de Jamaica</option>
-                  <option value="jengibre">Jengibre</option>
-                  <option value="mojito">Mojito</option>
-                </optgroup>
-                <optgroup label="Espumantes">
-                  <option value="mojito">Mojito</option>
-                  <option value="moscatel">Moscatel</option>
-                  <option value="Rose">Rosé</option>
-                </optgroup>
-                <optgroup label="Vinos Chilenos">
-                  <option value="sira-tardio">Sirah Tardío</option>
-                  <option value="beso">Beso</option>
-                  <option value="sangre-huasa">Sangre Huasa</option>
-                  <option value="misa">Misa</option>
-                  <option value="dulce-moscatel">Dulce Moscatel</option>
-                </optgroup>
-                <optgroup label="Cócteles dulces">
-                  <option value="apio-y-limon">Apio y Limón</option>
-                  <option value="crema-cafe-con-amaretto">Crema Café con Amaretto</option>
-                  <option value="amaretto">Amaretto</option>
-                  <option value="banana">Banana</option>
-                  <option value="cafe">Café</option>
-                  <option value="chocolate">Chocolate</option>
-                  <option value="coco">Coco</option>
-                  <option value="crema-de-whisky">Crema de Whisky</option>
-                  <option value="diablo">Diablo</option>
-                  <option value="enguindado">Enguindado</option>
-                  <option value="manzanilla">Manzanilla</option>
-                  <option value="menta">Menta</option>
-                  <option value="pasas-al-whisky">Pasas al Whisky</option>
-                </optgroup>
-              </select>
-            </div>
-          </div>
-          <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
-            <div class="col-sm-2">
-              <label for="ingreso" class="form-label">Motivo del Ingreso</label>
-            </div>
-            <div class="col-sm-10">
-              <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" name="ingreso" id="ingreso">
-                <option value="1">Producción</option>
-                <option value="2">Devolución en eventos por clientes</option>
-                <option value="3">Devolución en evento por sobreestimación de stock</option>
-              </select>
-            </div>
-          </div>
-<<<<<<< HEAD
           <div class="col-sm-10">
             <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" name="tipo-de-producto" id="tipo-de-producto">
               <optgroup label="Cócteles Dulces">
@@ -171,7 +93,15 @@
         <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
           <div class="col-sm-2">
             <label for="ingreso" class="form-label">Motivo del Ingreso</label>
-=======
+          </div>
+          <div class="col-sm-10">
+            <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" id="ingreso">
+                <option value="1">Producción</option>
+                <option value="2">Devolución en eventos por clientes</option>
+                <option value="3">Devolución en evento por sobreestimación de stock</option>
+            </select>
+          </div>
+        </div>
           <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
             <div class="col-sm-2">
               <label for="cantidad"  class="form-label">Cantidad</label>
@@ -187,32 +117,7 @@
             <div class="col-sm-10">
               <input type="date" name="fecha" id="fecha" class="form-control pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5">
             </div>
->>>>>>> 899f4e0 (chore(WarehouseForm): we add form with to the form)
           </div>
-          <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
-            <div class="col-sm-2">
-              <label for="observaciones" class="form-label">Observaciones</label>
-            </div>
-            <div class="col-sm-10">
-              <textarea name="Observaciones" class="form-control pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-          </div>
-          <div class="col-12 mt-3 mb-3 d-flex justify-content-center">
-            <button type="submit" class="btn btn-outline-light btn-lg rounded-pill mandinga-color">Ingresar</button>
-          </div>
-<<<<<<< HEAD
-          <div class="col-sm-10">
-            <input type="number" id="cantidad" class="form-control pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5">
-          </div>
-        </div>
-        <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
-          <div class="col-sm-2">
-            <label for="fecha" class="form-label">Fecha</label>
-          </div>
-          <div class="col-sm-10">
-            <input type="date" id="fecha" class="form-control pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5">
-          </div>
-        </div>
         <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
           <div class="col-sm-2">
             <label for="observaciones" class="form-label">Observaciones</label>
@@ -224,11 +129,6 @@
         <div class="col-12 mt-3 mb-3 d-flex justify-content-center">
           <button type="submit" class="btn btn-outline-light btn-lg rounded-pill mandinga-color">Ingresar</button>
         </div>
-      </form>
-=======
-        </form>
-      </div>
->>>>>>> 899f4e0 (chore(WarehouseForm): we add form with to the form)
+        <% end %>
     </div>
   </div>
-<% end %>
