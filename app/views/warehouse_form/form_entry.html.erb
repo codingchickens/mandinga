@@ -13,9 +13,10 @@
             <label for="elemento" class="form-label">Elemento</label>
             </div>
             <div class="col-sm-10">
-              <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" name="elemento" id="elemento">
+              <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" onchange="toggleProductType();" name="elemento" id="elemento">
+                <option readonly disabled selected value="">Seleccione elemento</option>
                 <optgroup label="Productos">
-                  <option value="producto">Producto</option>
+                  <option id="producto" value="producto">Producto</option>
                 </optgroup>
                 <optgroup label="Materiales">
                   <option value="etiquetas">Etiquetas</option>
@@ -25,68 +26,75 @@
               </select>
             </div>
           </div>
+          <div id="variedad-de-producto">
+            <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
+              <div class="col-sm-2">
+                <label for="tipo-de-producto" class="form-label">Tipo de producto</label>
+              </div>
+            <div class="col-sm-10">
+              <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" name="tipo-de-producto" id="tipo-de-producto" onchange="toggleProductCreation()">
+                <option readonly disabled selected value="">Seleccione producto</option>
+                <optgroup label="Cócteles Dulces">
+                  <option value="maracuya">Maracuyá</option>
+                  <option value="durazno">Durazno</option>
+                  <option value="frambuesa">Frambuesa</option>
+                  <option value="mango">Mango</option>
+                  <option value="flor-de-jamaica">Flor de Jamaica</option>
+                  <option value="jengibre">Jengibre</option>
+                  <option value="mojito">Mojito</option>
+                </optgroup>
+                <optgroup label="Espumantes">
+                  <option value="mojito">Mojito</option>
+                  <option value="moscatel">Moscatel</option>
+                  <option value="Rose">Rosé</option>
+                </optgroup>
+                <optgroup label="Vinos Chilenos">
+                  <option value="sira-tardio">Sirah Tardío</option>
+                  <option value="beso">Beso</option>
+                  <option value="sangre-huasa">Sangre Huasa</option>
+                  <option value="misa">Misa</option>
+                  <option value="dulce-moscatel">Dulce Moscatel</option>
+                </optgroup>
+                <optgroup label="Licores Artesanales">
+                  <option value="apio-y-limon">Apio y Limón</option>
+                  <option value="crema-cafe-con-amaretto">Crema Café con Amaretto</option>
+                  <option value="amaretto">Amaretto</option>
+                  <option value="banana">Banana</option>
+                  <option value="cafe">Café</option>
+                  <option value="chocolate">Chocolate</option>
+                  <option value="coco">Coco</option>
+                  <option value="crema-de-whisky">Crema de Whisky</option>
+                  <option value="diablo">Diablo</option>
+                  <option value="enguindado">Enguindado</option>
+                  <option value="manzanilla">Manzanilla</option>
+                  <option value="menta">Menta</option>
+                  <option value="pasas-al-whisky">Pasas al Whisky</option>
+                </optgroup>
+                <optgroup label="Otro">
+                  <option value="otro" id="otro">Ingresar producto nuevo</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="nombre-producto-nuevo">
           <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
             <div class="col-sm-2">
-              <label for="tipo-de-producto" class="form-label">Tipo de producto</label>
+              <label for="producto-nuevo" class="form-label">Producto Nuevo</label>
             </div>
-          <div class="col-sm-10">
-            <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" name="tipo-de-producto" id="tipo-de-producto">
-              <optgroup label="Cócteles Dulces">
-                <option value="maracuya">Maracuyá</option>
-                <option value="durazno">Durazno</option>
-                <option value="frambuesa">Frambuesa</option>
-                <option value="mango">Mango</option>
-                <option value="flor-de-jamaica">Flor de Jamaica</option>
-                <option value="jengibre">Jengibre</option>
-                <option value="mojito">Mojito</option>
-              </optgroup>
-              <optgroup label="Espumantes">
-                <option value="mojito">Mojito</option>
-                <option value="moscatel">Moscatel</option>
-                <option value="Rose">Rosé</option>
-              </optgroup>
-              <optgroup label="Vinos Chilenos">
-                <option value="sira-tardio">Sirah Tardío</option>
-                <option value="beso">Beso</option>
-                <option value="sangre-huasa">Sangre Huasa</option>
-                <option value="misa">Misa</option>
-                <option value="dulce-moscatel">Dulce Moscatel</option>
-              </optgroup>
-              <optgroup label="Licores Artesanales">
-                <option value="apio-y-limon">Apio y Limón</option>
-                <option value="crema-cafe-con-amaretto">Crema Café con Amaretto</option>
-                <option value="amaretto">Amaretto</option>
-                <option value="banana">Banana</option>
-                <option value="cafe">Café</option>
-                <option value="chocolate">Chocolate</option>
-                <option value="coco">Coco</option>
-                <option value="crema-de-whisky">Crema de Whisky</option>
-                <option value="diablo">Diablo</option>
-                <option value="enguindado">Enguindado</option>
-                <option value="manzanilla">Manzanilla</option>
-                <option value="menta">Menta</option>
-                <option value="pasas-al-whisky">Pasas al Whisky</option>
-              </optgroup>
-              <optgroup label="Otro">
-                <option value="ingresar-producto-nuevo">Ingresar producto nuevo</option>
-              </optgroup>
-            </select>
+            <div class="col-sm-10">
+              <textarea class="form-control pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" name="producto-nuevo" id="producto-nuevo" rows="1"></textarea>
+            </div>
           </div>
         </div>
-        <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
-          <div class="col-sm-2">
-            <label for="producto-nuevo" class="form-label">Producto Nuevo</label>
-          </div>
-          <div class="col-sm-10">
-            <textarea class="form-control pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" name="producto-nuevo" id="producto-nuevo" rows="1"></textarea>
-          </div>
-        </div>
-        <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
-          <div class="col-sm-2">
-            <label for="familia-producto-nuevo" class="form-label">Familia del Nuevo Producto</label>
-          </div>
-          <div class="col-sm-10">
-            <textarea class="form-control pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" name="familia-producto-nuevo" id="familia-producto-nuevo" rows="1"></textarea>
+        <div id="familia">
+          <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
+            <div class="col-sm-2">
+              <label for="familia-producto-nuevo" class="form-label">Familia del Nuevo Producto</label>
+            </div>
+            <div class="col-sm-10">
+              <textarea class="form-control pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" name="familia-producto-nuevo" id="familia-producto-nuevo" rows="1"></textarea>
+            </div>
           </div>
         </div>
         <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
@@ -95,7 +103,8 @@
           </div>
           <div class="col-sm-10">
             <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" id="ingreso">
-                <option value="1">Producción</option>
+              <option readonly disabled selected value="">Seleccione motivo</option>  
+              <option value="1">Producción</option>
                 <option value="2">Devolución en eventos por clientes</option>
                 <option value="3">Devolución en evento por sobreestimación de stock</option>
             </select>
@@ -139,3 +148,36 @@
         <% end %>
     </div>
   </div>
+</div>
+<script>
+  function toggleProductType() {
+    //0.encontrar qué eligió
+    const select = document.getElementById("elemento")
+    const selectedvalue = select.value
+    const productTypeSelect = document.getElementById('variedad-de-producto')
+    //1.revisar si se eligió producto
+    if(selectedvalue=="producto") {
+      //2.si se eligió producto: aparece el selector del tipo de producto
+      productTypeSelect.style.display = 'block'; 
+
+    } else {
+         //3. si no es producto: esconde el selector del tipo de producto
+         productTypeSelect.style.display = 'none'; 
+    }
+  }
+  function toggleProductCreation() {
+    const selectType = document.getElementById('tipo-de-producto')
+    const selectvalue = selectType.value
+
+    //1.revisar si eligió ingresar producto nuevo
+    if(selectvalue=="otro") {
+       //2.si se eligió ingresar producto nuevo: aparecen los selectores del nombre de nuevo producto y la familia del nuevo producto
+      document.getElementById('nombre-producto-nuevo').style.display = 'block';
+      document.getElementById('familia').style.display = 'block'
+    } else {
+    //3. si no escogió ingresar producto nuevo: esconder los selectores del nombre de nuevo producto y familia del nuevo producto
+      document.getElementById('nombre-producto-nuevo').style.display = 'none';
+      document.getElementById('familia').style.display = 'none'  
+    }
+  }
+</script>

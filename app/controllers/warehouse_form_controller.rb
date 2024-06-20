@@ -9,6 +9,6 @@ class WarehouseFormController < ApplicationController
   end
 
   def save_form
-    binding.pry
+    # binding.pry
   end
 end

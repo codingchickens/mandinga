@@ -13,9 +13,10 @@
             <label for="elemento" class="form-label">Elemento</label>
           </div>
           <div class="col-sm-10">
-            <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" name="elemento" id="elemento">
+            <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" onchange="toggleProductTipe();" name="elemento" id="elemento">
+                <option readonly disabled selected value="">Seleccione elemento</option>
               <optgroup label="Productos">
-                <option value="producto">Producto</option>
+                <option id="producto" value="producto">Producto</option>
               </optgroup>
               <optgroup label="Materiales">
                 <option value="etiquetas">Etiquetas</option>
@@ -25,49 +26,52 @@
             </select>
           </div>
         </div>
-        <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
-          <div class="col-sm-2">
-            <label for="tipo-de-producto" class="form-label">Tipo de producto</label>
-          </div>
-          <div class="col-sm-10">
-            <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" name="tipo-de-producto" id="tipo-de-producto">
-              <optgroup label="Cócteles Dulces">
-                <option value="maracuya">Maracuyá</option>
-                <option value="durazno">Durazno</option>
-                <option value="frambuesa">Frambuesa</option>
-                <option value="mango">Mango</option>
-                <option value="flor-de-jamaica">Flor de Jamaica</option>
-                <option value="jengibre">Jengibre</option>
-                <option value="mojito">Mojito</option>
-              </optgroup>
-              <optgroup label="Espumantes">
-                <option value="mojito">Mojito</option>
-                <option value="moscatel">Moscatel</option>
-                <option value="Rose">Rosé</option>
-              </optgroup>
-              <optgroup label="Vinos Chilenos">
-                <option value="sira-tardio">Sirah Tardío</option>
-                <option value="beso">Beso</option>
-                <option value="sangre-huasa">Sangre Huasa</option>
-                <option value="misa">Misa</option>
-                <option value="dulce-moscatel">Dulce Moscatel</option>
-              </optgroup>
-              <optgroup label="Licores Artesanales">
-                <option value="apio-y-limon">Apio y Limón</option>
-                <option value="crema-cafe-con-amaretto">Crema Café con Amaretto</option>
-                <option value="amaretto">Amaretto</option>
-                <option value="banana">Banana</option>
-                <option value="cafe">Café</option>
-                <option value="chocolate">Chocolate</option>
-                <option value="coco">Coco</option>
-                <option value="crema-de-whisky">Crema de Whisky</option>
-                <option value="diablo">Diablo</option>
-                <option value="enguindado">Enguindado</option>
-                <option value="manzanilla">Manzanilla</option>
-                <option value="menta">Menta</option>
-                <option value="pasas-al-whisky">Pasas al Whisky</option>
-              </optgroup>
-            </select>
+        <div id="variedad-de-producto">
+          <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
+            <div class="col-sm-2">
+              <label for="tipo-de-producto" class="form-label">Tipo de producto</label>
+            </div>
+            <div class="col-sm-10">
+              <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" name="tipo-de-producto" id="tipo-de-producto">
+                  <option readonly disabled selected value="">Seleccione producto</option>
+                <optgroup label="Cócteles Dulces">
+                  <option value="maracuya">Maracuyá</option>
+                  <option value="durazno">Durazno</option>
+                  <option value="frambuesa">Frambuesa</option>
+                  <option value="mango">Mango</option>
+                  <option value="flor-de-jamaica">Flor de Jamaica</option>
+                  <option value="jengibre">Jengibre</option>
+                  <option value="mojito">Mojito</option>
+                </optgroup>
+                <optgroup label="Espumantes">
+                  <option value="mojito">Mojito</option>
+                  <option value="moscatel">Moscatel</option>
+                  <option value="Rose">Rosé</option>
+                </optgroup>
+                <optgroup label="Vinos Chilenos">
+                  <option value="sira-tardio">Sirah Tardío</option>
+                  <option value="beso">Beso</option>
+                  <option value="sangre-huasa">Sangre Huasa</option>
+                  <option value="misa">Misa</option>
+                  <option value="dulce-moscatel">Dulce Moscatel</option>
+                </optgroup>
+                <optgroup label="Licores Artesanales">
+                  <option value="apio-y-limon">Apio y Limón</option>
+                  <option value="crema-cafe-con-amaretto">Crema Café con Amaretto</option>
+                  <option value="amaretto">Amaretto</option>
+                  <option value="banana">Banana</option>
+                  <option value="cafe">Café</option>
+                  <option value="chocolate">Chocolate</option>
+                  <option value="coco">Coco</option>
+                  <option value="crema-de-whisky">Crema de Whisky</option>
+                  <option value="diablo">Diablo</option>
+                  <option value="enguindado">Enguindado</option>
+                  <option value="manzanilla">Manzanilla</option>
+                  <option value="menta">Menta</option>
+                  <option value="pasas-al-whisky">Pasas al Whisky</option>
+                </optgroup>
+              </select>
+            </div>
           </div>
         </div>
         <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
@@ -75,7 +79,8 @@
             <label for="ingreso" class="form-label">Motivo del egreso</label>
           </div>
           <div class="col-sm-10">
-            <select class="form-select form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" id="ingreso">
+            <select class="form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" id="ingreso">
+              <option readonly disabled selected value="">Seleccione motivo</option>
               <option value="1">Ventas</option>
               <option value="2">Merma</option>
               <option value="3">Regalo</option>
@@ -88,7 +93,7 @@
             <label for="cantidad" class="form-label">Cantidad</label>
           </div>
           <div class="col-sm-10">
-            <input type="number" id="cantidad" class="form-control form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5">
+            <input type="number" id="cantidad" class="form-control pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5">
           </div>
         </div>
         <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
@@ -96,7 +101,7 @@
             <label for="fecha" class="form-label">Fecha</label>
           </div>
           <div class="col-sm-10">
-            <input type="date" id="fecha" class="form-control form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5">
+            <input type="date" id="fecha" class="form-control pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5">
           </div>
         </div>
         <div class="row mt-3 mb-3 d-flex align-items-center fs-5">
@@ -104,7 +109,7 @@
             <label for="observaciones" class="form-label">Observaciones</label>
           </div>
           <div class="col-sm-10">
-            <textarea class="form-control form-select pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control pt-3 pb-3 pt-sm-2 pb-sm-2 fs-5" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
         </div>
         <div class="col-12 mt-3 mb-3 d-flex justify-content-center">
@@ -114,3 +119,20 @@
     </div>
   </div>
 </div>
+<script>
+  function toggleProductTipe() {
+    //0.encontrar qué eligió
+    const select = document.getElementById("elemento")
+    const selectedvalue = select.value
+    const productTypeSelect = document.getElementById('variedad-de-producto')
+    //1.revisar si se eligió producto
+    if(selectedvalue=="producto") {
+      //2.si se eligió producto: aparece el selector del tipo de producto
+      productTypeSelect.style.display = 'block'; 
+
+    } else {
+         //3. si no es producto: esconde el selector del tipo de producto
+         productTypeSelect.style.display = 'none'; 
+    }
+  }
+</script>

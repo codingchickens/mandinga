@@ -41,3 +41,12 @@
  .mandinga-color {
     background: #A53E4C;
  }
+ #variedad-de-producto {
+  display: none;
+ }
+ #nombre-producto-nuevo {
+  display: none;
+ }
+ #familia {
+  display: none;
+ }
